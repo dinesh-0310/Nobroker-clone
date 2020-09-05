@@ -15,7 +15,7 @@
             height: 1px;
             width: 1700px;
             clear: both;
-            margin: 22px 0 40px;
+            margin: 22px 0 20px;
         }
         .main_content{
             text-align: center;
@@ -29,7 +29,7 @@
         .report{
             background-color: pink;
             width: 450px;
-            height: 30px;
+            height: 40px;
             clear: both;
             margin-left: 180px;
             border-radius: 5px;
@@ -37,6 +37,50 @@
         .report div,p,h4{
             float: left;
             margin: 8px 5px 0px;
+        }
+        .buy{
+            margin-left: 180px;
+        }
+        .buy div{
+            float: left;
+            margin: 50px 0px 0px;
+            background-color: rgb(245, 244, 244);
+            padding: 25px;
+            width: 100px;
+            height: 10px;
+            font-size:20px;
+            border:1px solid grey;
+            border-bottom: hidden;
+        }
+        #search{
+            clear: both;
+            margin-left:10px ;
+            height: 80px;
+            width: 772px;
+            border: 1px solid grey;
+            border-radius: 3px;
+        }
+        #search div{
+            float: left;
+            padding: 35px;
+            height: 10px;
+            font-size:20px;
+            border:gainsboro solid 2px;
+            width:120px;
+            font-size: 20px;
+        }
+        .owner{
+            margin-top: 100px;
+        }
+        .owner div{
+            float: left;
+            margin: 0 30px 10px;
+        }
+        .owner .line-2{
+            background-color: gray;
+            height: 2px;
+            width: 200px;
+            margin-top: 10px;
         }
 
     </style>
@@ -61,6 +105,29 @@
             <p>for<h4>Indian Real Estate Report<p style="float: right; font-size: 12px;margin:0px 10px 10px;">2019-20</p> </h4></p>
             
         </div>
+        <div class="buy">
+            <div>Buy</div>
+            <div style="border-bottom: solid red 5px">Rent</div>
+            <div>Commercial</div>
+        </div>
+        <div id="search">
+            <div>
+                <p>Mumbai</p>
+                <img src="./images/drop-down.svg" style="float: left;;width: 20px;margin:10px 5px 0px"/>
+            </div>
+            <div style="width: 310px;">Search upto 3 localities or landmarks</div>
+            <div style="background-color: red;color:white">
+                <img src="./images/search-2.svg"style="width: 30px;float:left;margin:7px 5px 30px;"/>
+                <p>Search</p>
+            </div>
+        </div> 
+        <div class="owner">
+            <div class="line-2"></div>
+            <div style="padding-bottom:15px ;">Are you a Property Owner?</div>
+            <div class="line-2" style="float: right;"></div>
+            <div style="clear: both;background-color: teal;color:white;height: 30px;padding-top: 8px;width: 200px;text-align: center;margin: 25px 280px;">Post Your Free Ad</div>
+        </div>       
     </div>
+
 </body>
 </html>
