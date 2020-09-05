@@ -1,0 +1,132 @@
+(function(root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['fb'], factory);
+    } else {
+        // Browser globals
+        root.facebook = factory(root.options);
+    }
+}(window, function(options) {
+
+    var facebook = {
+        fb_app_id: '',
+
+        init: function(appId) {
+            this.fb_app_id = appId;
+            FB.init({
+                appId: this.fb_app_id,
+                version: 'v2.10'
+            });
+        },
+
+        getFBStatus: function(handler) {
+            FB.getLoginStatus(function(response) {
+                if (handler) {
+                    handler(response);
+                }
+            });
+        },
+
+        doLogin: function(handler) {
+            var self = this;
+            FB.login(function(response) {
+                if (handler) {
+                    handler(response);
+                }
+            }, { scope: 'public_profile,email' });
+        },
+
+        getUserDetails: function(handler) {
+            var self = this,
+                fields;
+
+            if (this.fb_app_id == '390475044430580') {
+                fields = '/me?fields=id,name,email,verified_mobile_phone';
+            } else {
+                fields = '/me?fields=id,name,email';
+            }
+
+            FB.api(fields, function(response) {
+                if (handler) {
+                    handler(response);
+                }
+            });
+        },
+
+        smartlockStoreFBData: function(cred) {
+            var params = {};
+            params.email = cred.id;
+            params.name = cred.name;
+            params.profilePic = cred.iconURL;
+
+            $.ajax({
+                url: "/api/v4/social/signin/facebook",
+                type: "POST",
+                data: params,
+                contentType: "application/x-www-form-urlencoded",
+                success: function(data) {
+                    
+                    if (data.status_code != 'INVALID_PHONE') {
+                        window.location.reload();
+                    }
+                },
+                error: function(resp) {
+                    console.log('Some error', response);
+                }
+            });
+        },
+        saveUserDetails: function(response, handler) {
+            var params = {};
+            params.email = response.email;
+            params.fbPhone = response.verified_mobile_phone;
+            params.name = response.name;
+            params.socialUserId = response.id;
+            params.profilePic = "http://graph.facebook.com/" + response.id + "/picture";
+            params.profileLink = 'http://facebook.com/profile.php?id=' + response.id;
+            params.phone = $('#phno').text();
+
+            $.ajax({
+                url: "/api/v4/social/signin/facebook",
+                type: "POST",
+                data: params,
+                contentType: "application/x-www-form-urlencoded",
+                success: function(data) {
+                    if (navigator.credentials) {
+                        
+                        // console.log('1')
+                        if (data.data.imageAvailable.includes('http:'))
+                            data.data.imageAvailable = data.data.imageAvailable.replace('http:', 'https:')
+                        var cred = navigator.credentials.create({
+                            federated: {
+                                id: params.email,
+                                name: params.name,
+                                provider: 'https://facebook.com',
+                                iconURL: data.data.imageAvailable
+                            }
+                        }).then(function(result) {
+                            navigator.credentials.store(result).then(function(a) {
+                                
+                                // alert(a)
+                            }, function(a) {
+                                
+                                // alert(a)
+                            })
+                        })
+                    }
+                    if (handler) {
+                        handler(data);
+                    }
+                },
+                error: function(data) {
+                    if (handler) {
+                        handler(data);
+                    }
+                }
+            });
+        }
+
+    };
+
+    return facebook;
+
+}));

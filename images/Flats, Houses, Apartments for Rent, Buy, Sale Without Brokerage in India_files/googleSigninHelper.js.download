@@ -1,0 +1,120 @@
+(function(root, factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define(['googleSigninHelper'], factory);
+	} else {
+		// Browser globals
+		root.googleSigninHelper = factory(root.options);
+	}
+}(window, function(options) {
+
+	var googleSigninHelper = {
+		google_client_id: '',
+
+		init: function(appId){
+			var self=this;
+			this.google_client_id = appId;
+			gapi.load('auth2', function(){
+			    auth2 = gapi.auth2.init({
+		        	client_id: this.google_client_id,
+			        cookiepolicy: 'single_host_origin'
+			    });
+			});
+		},
+	
+
+		doLogin: function(successHandler, errorHandler){
+			if(typeof gapi !== 'undefined' && gapi != null){
+				if(typeof gapi.auth2 !== 'undefined' || gapi.auth2 != null){
+					this.auth2instance = gapi.auth2.getAuthInstance();
+					this.auth2instance.signIn().then(
+					function(response){
+						if(successHandler){
+							successHandler(response);
+						}
+					},
+					function(error){
+						if(errorHandler){
+							errorHandler(error);
+						}
+					});
+				}
+			}
+		},
+
+smartlockStoreGoogleData: function(profile){
+	var params = {};
+	params.email = profile.id;
+	params.name = profile.name;
+	// params.fbPhone = '';
+	// params.socialUserId = profile.getId();
+	// params.profilePic = profile.getImageUrl();
+	// params.profileLink = '';
+	// var countryData = $('input[name=oldPhone]').intlTelInput('getSelectedCountryData');
+	// params.phone = ('+' + countryData.dialCode) + $('input[name=oldPhone]').val();
+
+	if($('input[name=oldPhone]').val() != '' && $('input[name=oldPhone]').val() != null){
+		var countryData = $('input[name=oldPhone]').intlTelInput('getSelectedCountryData');
+		params.phone = ('+' + countryData.dialCode) + $('input[name=oldPhone]').val();
+	}
+	else{
+		params.phone = $('.numberInUse').text();
+	}
+	
+	$.ajax ({
+        url: "/api/v4/social/signin/google",
+        type:"POST",
+        data: params,
+        contentType: "application/x-www-form-urlencoded",
+        success: function(data){
+        	
+            window.location.reload();
+        },
+        error: function(resp){
+        	displayAlerts("Something went wrong. Try again later!", 'error', 3000);
+        }
+    }); 
+},
+
+	saveUserDetails: function(profile, handler){
+			var params = {};
+			params.email = profile.getEmail();
+			params.name = profile.getName();
+			params.socialUserId = profile.getId();
+			params.profilePic = profile.getImageUrl();
+			params.profileLink = '';
+			params.phone = profile.number || $('#phno').text();
+			
+			$.ajax ({
+		        url: "/api/v4/social/signin/google",
+		        type:"POST",
+		        data: params,
+		        contentType: "application/x-www-form-urlencoded",
+		        success: function(data){
+		        	if(navigator.credentials){
+		            	
+					  var cred  = navigator.credentials.create({
+					    federated:{
+					        id: params.email,
+					        name: params.name,
+					        provider: 'https://accounts.google.com'
+					    }
+					   }).then(function(result){
+					    navigator.credentials.store(result);
+					   })
+					}
+			        if(handler){
+			        	handler(data);
+			        }
+			    },
+			    error: function(data){
+			    	if(handler){
+			    		handler(data);
+			    	}
+			    }
+		    });
+		},
+	};
+	return googleSigninHelper;
+}));
+

@@ -1,0 +1,240 @@
+
+<!-- saved from url=(0041)https://api.juspay.in/payjs-iframe-sender -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+    (function () {
+
+        var toQueryString = function(obj) {
+            var parts = [];
+            for (var i in obj) {
+                if (obj.hasOwnProperty(i)) {
+                    parts.push(encodeURIComponent(i) + "=" + encodeURIComponent(obj[i]));
+                }
+            }
+            return parts.join("&");
+        };
+
+        /**
+         *
+         *  Base64 encode / decode
+         *  http://www.webtoolkit.info/
+         *
+         **/
+
+        var Base64 = {
+            // private property
+            _keyStr : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+            // public method for encoding
+            encode : function (input) {
+                var output = "";
+                var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+                var i = 0;
+                input = Base64._utf8_encode(input);
+                while (i < input.length) {
+                    chr1 = input.charCodeAt(i++);
+                    chr2 = input.charCodeAt(i++);
+                    chr3 = input.charCodeAt(i++);
+                    enc1 = chr1 >> 2;
+                    enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+                    enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+                    enc4 = chr3 & 63;
+                    if (isNaN(chr2)) {
+                        enc3 = enc4 = 64;
+                    } else if (isNaN(chr3)) {
+                        enc4 = 64;
+                    }
+                    output = output +
+                            this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
+                            this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+                }
+                return output;
+            },
+            // public method for decoding
+            decode : function (input) {
+                var output = "";
+                var chr1, chr2, chr3;
+                var enc1, enc2, enc3, enc4;
+                var i = 0;
+                input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+                while (i < input.length) {
+                    enc1 = this._keyStr.indexOf(input.charAt(i++));
+                    enc2 = this._keyStr.indexOf(input.charAt(i++));
+                    enc3 = this._keyStr.indexOf(input.charAt(i++));
+                    enc4 = this._keyStr.indexOf(input.charAt(i++));
+                    chr1 = (enc1 << 2) | (enc2 >> 4);
+                    chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                    chr3 = ((enc3 & 3) << 6) | enc4;
+                    output = output + String.fromCharCode(chr1);
+                    if (enc3 != 64) {
+                        output = output + String.fromCharCode(chr2);
+                    }
+                    if (enc4 != 64) {
+                        output = output + String.fromCharCode(chr3);
+                    }
+                }
+                output = Base64._utf8_decode(output);
+                return output;
+            },
+            // private method for UTF-8 encoding
+            _utf8_encode : function (string) {
+                var utftext = "";
+                for (var n = 0; n < string.length; n++) {
+                    var c = string.charCodeAt(n);
+                    if (c < 128) {
+                        utftext += String.fromCharCode(c);
+                    }
+                    else if((c > 127) && (c < 2048)) {
+                        utftext += String.fromCharCode((c >> 6) | 192);
+                        utftext += String.fromCharCode((c & 63) | 128);
+                    }
+                    else {
+                        utftext += String.fromCharCode((c >> 12) | 224);
+                        utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                        utftext += String.fromCharCode((c & 63) | 128);
+                    }
+                }
+                return utftext;
+            },
+            // private method for UTF-8 decoding
+            _utf8_decode : function (utftext) {
+                var string = "";
+                var i = 0;
+                var c = c1 = c2 = 0;
+                while ( i < utftext.length ) {
+                    c = utftext.charCodeAt(i);
+                    if (c < 128) {
+                        string += String.fromCharCode(c);
+                        i++;
+                    }
+                    else if((c > 191) && (c < 224)) {
+                        c2 = utftext.charCodeAt(i+1);
+                        string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                        i += 2;
+                    }
+                    else {
+                        c2 = utftext.charCodeAt(i+1);
+                        c3 = utftext.charCodeAt(i+2);
+                        string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                        i += 3;
+                    }
+                }
+                return string;
+            }
+        }
+
+        var encodeDataV1 = function(data, encodeKey) {
+            var encodedData = "";
+            for ( var i = 0; i < data.length; i++ )
+            {
+                encodedData += String.fromCharCode(data.charCodeAt(i) ^ encodeKey.charCodeAt(i%encodeKey.length));
+            }
+            return "enc-" + Base64.encode(encodedData);
+        }
+
+        // Get the merchant domain to pass to postMessage
+        // This must be done to send messages to parent window's domain securely
+        var parentWindow = 'https://www.nobroker.in/';
+ 
+        // Send a signal to the parent that the IFrame is loaded and ready for use
+        parent.window.postMessage(JSON.stringify({
+            'messageId': 'check-ok'
+        }), parentWindow);
+
+        window.onmessage = function (event) {
+            var message = JSON.parse(event.data);
+            var cardEncodingKey = message.payload.card_encoding_key
+            var encodeCardDetails = (cardEncodingKey && message.payload.card_encoding_version);
+            if ("card_number" in message.payload) {
+                var cardNumber = parent.frames['card_number_iframe_' + message.iframeId].document.getElementById("card_number").value;
+                message.payload.card_number = cardNumber
+                if(encodeCardDetails) {
+                    message.payload.card_number = encodeDataV1(cardNumber, cardEncodingKey)
+                }
+            }
+            if ("card_exp_month" in message.payload) {
+                try {
+                    var cardExpMonth = parent.frames['card_exp_month_iframe_' + message.iframeId].document.getElementById("card_exp_month").value
+                    message.payload.card_exp_month = cardExpMonth
+                    if(encodeCardDetails) {
+                        message.payload.card_exp_month = encodeDataV1(cardExpMonth, cardEncodingKey)
+                    }
+                }
+                catch (err) {
+                    console.log("Failed to get Card expiry month", err)
+                }
+            }
+            if ("card_exp_year" in message.payload) {
+                try {
+                    var cardExpYear = parent.frames['card_exp_year_iframe_' + message.iframeId].document.getElementById("card_exp_year").value
+                    message.payload.card_exp_year = cardExpYear
+                    if(encodeCardDetails) {
+                        message.payload.card_exp_year = encodeDataV1(cardExpYear, cardEncodingKey)
+                    }
+                }
+                catch (err) {
+                    console.log("Failed to get Card expiry year", err)
+                }
+            }
+            if ("name_on_card" in message.payload) {
+                try {
+                    message.payload.name_on_card = parent.frames['name_on_card_iframe_' + message.iframeId].document.getElementById("name_on_card").value
+                }
+                catch (err) {
+                    console.log("Failed to get Name on card", err)
+                }
+            }
+            if ("card_security_code" in message.payload) {
+                console.log("card_security_code was in message payload",message.payload)
+                try {
+                    var cardSecurityCode = parent.frames['security_code_iframe_' + message.iframeId].document.getElementById("security_code").value
+                    message.payload.card_security_code = cardSecurityCode
+                    if(encodeCardDetails) {
+                        message.payload.card_security_code = encodeDataV1(cardSecurityCode, cardEncodingKey)
+                    }
+                } catch(err) {
+                    console.log("Failed to get CVV number", err);
+                }
+                
+            }
+            if(cardEncodingKey) {
+                delete message.payload.card_encoding_key
+            }
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', message.url, true)
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader('Juspay-Payjs-Version', 'v3');
+            xhr.send(toQueryString(message.payload));
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    var data = {
+                        messageId: message.messageId,
+                        senderId: message.senderId
+                    };
+
+                    var httpStatus = xhr.status;
+
+                    // Assuming any 2xx HTTP response is a success for now.
+                    if (httpStatus === 200 || httpStatus.toString()[0] === '2') {
+                        try {
+                            data.payload = JSON.parse(xhr.responseText)
+                            data.ok = true;
+                        } catch (e) {
+                            data.ok = false;
+                        }
+                    } else {
+                        try {
+                            data.payload = JSON.parse(xhr.responseText)
+                        } catch(e) {
+                            data.payload = {"status" : "error", "error_message" : "Internal Error", "error_code" : "internal_error"}
+                        }
+                        data.ok = false;
+                    }
+
+                    parent.window.postMessage(JSON.stringify(data), parentWindow);
+                }
+            };
+        };
+    })();
+</script>
+</head><body></body></html>
