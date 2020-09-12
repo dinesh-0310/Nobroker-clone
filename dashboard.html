@@ -1,115 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Flats,Houses,Apartments for Rent,Buy, Sale Without Brokerage in india</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <style>
-        .nav div{
+        
+        body{
+            width: 100%;
+            background: #e9e9e9;
+            color: #707070;
+            font-size: 14px;
+            font-family: 'Source Sans Pro',sans-serif,Calibri,helvetica,Cantarell,arial,tahoma,verdana;
+
+        }
+        .nav{
+            border-bottom: 1px solid #efd2d2!important;
+            padding-bottom: 18px;
+            position: fixed;
+            max-width: 100%;
+            background: #FFF;
+            top: 0;
+        }
+        .nav > img{
+            padding: 10px 20px 0;
+            max-width: 20%;
+            float: left;
+        }
+        .nav > .nav-item > p{
+            margin-top: 6px;
+        }
+        .nav > .nav-i{
             float: right;
             border: 2px solid grey;
-            margin:5px 10px;
+            margin:10px 10px 5px;
             padding:13px;
             text-align: center;
             height: 22px;
+            align-items: center;
+            color: #555;
         }
-        .line{
-            background-color: grey;
-            height: 1px;
-            width: 1700px;
-            clear: both;
-            margin: 22px 0 20px;
+        .nav > .nav-button{
+            background-color: rgb(4, 63, 58);
+            color:white;
+            border-radius: 2px;
+        }
+        .nav > .nav-space{
+            float: left;
+            border: hidden;
+            max-width: 40%;
+            padding: 0 410px;
         }
         .main_content{
+            padding: 8% 20% 1%;
+            max-width: 100%;
+            background: white;
+        }
+        .text-center{
             text-align: center;
-            margin: 20px 450px 20px 450px;
         }
         .main_para{
             text-align: center;
-            font-size: 40px;
+            font-size: 30px;
             padding: 30px;
+            font-weight: 400;       
         }
         .report{
             background-color: pink;
             width: 450px;
             height: 40px;
             clear: both;
-            margin-left: 180px;
+            margin:auto;
             border-radius: 5px;
         }
-        .report div,p,h4{
+        .report a{
+            color: #464646;
+            font-weight: 600;
+        }
+        .report div,p{
             float: left;
-            margin: 8px 5px 0px;
+            margin: 12px 5px 0px;
         }
         .buy{
-            margin-left: 180px;
+            width: 100%;
+            margin:5% 15% 0;
         }
         .buy div{
             float: left;
-            margin: 50px 0px 0px;
+            margin: 30px 0px -3px;
             background-color: rgb(245, 244, 244);
             padding: 25px;
             width: 100px;
-            height: 10px;
+            height: 9px;
             font-size:20px;
-            border:1px solid grey;
+            border:0.6px solid #e9e9e9;
             border-bottom: hidden;
+            color: #aaa;
         }
         #search{
+            margin-bottom: 15px;
+            height: 120px;
+            text-align: center;
+            max-width: 100%;
             clear: both;
-            margin-left:10px ;
-            height: 80px;
-            width: 772px;
-            border: 1px solid grey;
-            border-radius: 3px;
         }
-        #search div{
+        #search > .search-form{
+            margin: 0 0 -5px;
+            border: 0.2px solid #e2e2e2;
+            border-radius: 5px 5px 0 0;
+            padding: 1px;
+            display: flex;
+            flex-direction: row;
+        }
+        .search-form .search-city{
+            margin: 0;
+            text-align: center;
+            font-size: 15px;
+            width: 150px;
             float: left;
-            padding: 35px;
-            height: 10px;
-            font-size:20px;
-            border:gainsboro solid 2px;
-            width:120px;
-            font-size: 20px;
+            padding: 10px 0 0 14px;
+            border-right: 0.6px solid #e9e9e9; ;
         }
-        .owner{
-            margin-top: 100px;
+        .search-form .search-text{
+            width: 422px;
         }
-        .owner div{
-            float: left;
-            margin: 0 30px 10px;
+        .search-text input{
+            height: auto;
+            padding:  15px 15px 15px 12px;
+            font-size: 15px;
+            width: 400px;
+            margin: 4px 0;
+            border: none;
+            border-radius: 0 3px 0 0;
         }
-        .owner .line-2{
-            background-color: gray;
-            height: 2px;
-            width: 200px;
-            margin-top: 10px;
-        }
-        .rent-now{
-            clear: both;
-            background-color: rgb(80, 52, 116);
-            height: 60px;
-            color: white;
-            padding:30px 0 0 520px;
-            font-size: 21px;
-        }
-        .rent-now div{
-            background-color: white;
-            width: 130px;
-            float: right;
-            color: purple;
-            margin-right: 385px;
-            height: 28px;
-            padding: 5px 0px 0 10px;
-            border-radius: 5px;
-        }
-        .services img{
-            width: 80px;
-            margin:20px 55px;
-            padding: 10px 40px;     
-        }
-        .services p{
-            width: 100px;
-            margin:2px 67px;
-            padding-left: 40px;  
+        .search-button{
+            height: auto;
+            padding: 13px;
             font-size: 16px;
+            border-radius: 0 3px 0 0;
+            background: #fd3753;
+            border: 1px solid #fd3753;
+            color: white;
+            width: 130px;
+        }
+        .search-button button{
+            background: #fd3753;
+            border-width: 0;
+            padding: 0 5px;
+            color: white;
+            font-size: 17px;
+        }
+        .p-owner{
+            display: flex;
+            flex-direction: row;
+            width: 600px;
+            margin-left: 13%;
+        }
+        .p-owner > .property-owner{
+            text-align: center;
+            width: 30%;
+            font-weight: 500;
+        }
+        .line-2{
+            background-color: #e2e2e2;
+            height: 2px;
+            width: 100px;
+            margin: 6px 10px;
+        } 
+        .owner > #owner-button{
+            background: #009587;
+            color: white;
+            margin: 4% 25%;
+            width: 250px;
+            height: 28px;
+            padding-top: 2%;
+            border-radius: 8px;
+        }
+        #main-banner{
+            background-color: #384d6ce8;
+            color: white;
+            max-height: 75px;
+            text-align: center;
+            padding: 25px 0;
+            letter-spacing: 0.4px;
+        }
+        .banner-btn{
+            margin-left: 10px;
+            padding: 7px;
+            border-radius: 5px;
+            width: 130px;
+            border: none;
+        }
+        .services{
+            background: white;
+            padding: 20px 0 30px;
+            height: 150px;
+        }
+        .services .serviceItem{
+            width: 16.66%;
+            text-align: center;
+            margin: 0;
+            float: left;
+            background: white;
+        }
+        .serviceItem .serviceItemIcon{
+            height: 80px;
+            margin: 12px auto;
+            width: 60px;
+        }
+        .serviceItem .service-orange{
+            margin-left: 3px;
+            background:  #ed5352;
+            color: white;
+            font-size: 12px;
+            padding: 0 1.5px;
+            border-radius: 2px;
+        }
+        .serviceItemIcon img{
+           width: 60px;
+        }
+        .serviceItem .serviceItemText{
+            padding-top: 5px;
+            color: #837872;
+            font-weight: 500px;
+            text-align: center;
+        }
+        .hp-caption{
+            height: 55px;
+            background: white;
+            display: flex;
+            flex-direction: row;
+        }
+        .caption-line-circle1{
+            width: 35%;
+            display: flex;
+            flex-direction: row;
+        }
+        .caption-line-circle2{
+            width: 35%;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .caption-line{
+            background-color: #e2e2e2;
+            height: 2px;
+            margin-top: 10px;
+            width: 90%;
+        }
+        .caption-circle{
+            border-radius: 50%;
+            margin: 0;
+            width: 20px;
+            height: 20px;
+            border: 1px solid  #FD3753;
+        }
+        .hp-caption .caption-content{
+            color: #666;
+            font-size: 30px;
+            width: 30%;
+            text-align: center;
         }
         .nobroker_imgs img{
             width: 111px;
@@ -125,75 +275,113 @@
             padding: 5px 105px;
             margin-bottom: 100px;
         }
+        .builder{
+            clear: both;
+        }
     </style>
-    <title>Flats,Houses,Apartments for Rent,Buy, Sale Without Brokerage in india</title>
+    
 </head>
 <body>
     <div class="nav">
         <img src="./images/nb_logo_new_trans.svg" alt="Nobroker">
-        <div><img src="./images/menu.svg" style="width: 15px;float: left;margin:7px 2px 0px"/><p>Menu</p></div>
-        <div>Login/Sign Up</div>
-        <div style="background-color: rgb(4, 63, 58);color:white"> For Property Owners</div>
-        <div><img src="./images/payrent.svg" style="float: left;width: 20px;margin:7px 2px 0px"/><p>Pay Rent</p> </div>
+        <div class="nav-space"></div>
+        <div class="nav-item nav-i "><img src="./images/menu.svg" style="width: 15px;float: left;margin:7px 2px 0px"/><p>Menu</p></div>
+        <div class="nav-i">Login/Sign Up</div>
+        <div class="nav-i nav-button"> For Property Owners</div>
+        <div class="nav-item nav-i"><img src="./images/payrent.svg" style="float: left;width: 20px;margin:7px 2px 0px"/><p>Pay Rent</p> </div>
     </div>
-    <div class="line"></div>
-    <div class="main_content">
-        <p class ="main_para">World's Largest NoBrokerage Property Site</p>
-        <div class="report">
-            <div>
-                <img src="./images/click here.svg"/>
-                <a href="">Click here</a>
+    
+    <div class="main_content text-center">
+        <div>
+            <p class ="main_para">World's Largest NoBrokerage Property Site</p>
+            <div class="report">
+                <div>
+                    <img src="./images/click here.svg"/>
+                    <a href=""> Click here</a>
+                </div>
+                <p>for <strong>Indian Real Estate Report </strong> 2019-20</p>
+                
             </div>
-            <p>for<h4>Indian Real Estate Report<p style="float: right; font-size: 12px;margin:0px 10px 10px;">2019-20</p> </h4></p>
-            
         </div>
+        
         <div class="buy">
             <div>Buy</div>
-            <div style="border-bottom: solid red 5px">Rent</div>
+            <div style="background:white;border-bottom: solid red 5px">Rent</div>
             <div>Commercial</div>
         </div>
         <div id="search">
-            <div>
-                <p>Mumbai</p>
-                <img src="./images/drop-down.svg" style="float: left;;width: 20px;margin:10px 5px 0px"/>
-            </div>
-            <div style="width: 310px;">Search upto 3 localities or landmarks</div>
-            <div style="background-color: red;color:white">
-                <img src="./images/search-2.svg"style="width: 30px;float:left;margin:7px 5px 30px;"/>
-                <p>Search</p>
+            <div class="search-form">
+                <div class="search-city">
+                    <p>Mumbai</p>
+                    <i style='font-size:24px; padding:7px 40px 5px 0;' class='fas'>&#xf107;</i>
+                </div>
+                <div class="search-text ">
+                    <input type="text" placeholder="Search upto 3 localities or landmarks"/>
+                </div>
+                <div class="search-button">
+                    <button>
+                        <i class="fa fa-search" style="font-size:24px; color: white;"></i>
+                        Search
+                    </button>
+                </div>
             </div>
         </div> 
         <div class="owner">
-            <div class="line-2"></div>
-            <div style="padding-bottom:15px ;">Are you a Property Owner?</div>
-            <div class="line-2" style="float: right;"></div>
-            <div style="clear: both;background-color: teal;color:white;height: 30px;padding-top: 8px;width: 200px;text-align: center;margin: 15px 280px;">Post Your Free Ad</div>
+            <div class="p-owner">
+                <div class="line-2"></div>
+                <div class="property-owner">Are you a Property Owner?</div>
+                <div class="line-2"></div>
+            </div>
+            <div id="owner-button">
+                Post Your Free Ad
+            </div>
         </div>       
     </div>
-    <div class="rent-now">
-        <img src="./images/payrent.svg" style="width: 45px;float:left;margin:7px 5px 30px;"/>
-        <p>Pay rent and earn cradit card rewards + get upto</p>
-        <h4>₹500 cashback</h4>
-        <div>Pay Rent Now</div>
+    <div id="main-banner">
+        <div class="banner-info">
+            <div><i style='font-size:28px;padding-right: 6px;' class='far'>&#xf09d;</i> Pay rent and earn cradit card rewards + get upto <span style="font-weight: 600;">₹500 cashback </span>
+            <button class="banner-btn">Pay Rent Now</button>
+            </div>
+        </div>
     </div>
-    <div class="services" style="float: left;">
-        <img src="./images/rental-aggrement.svg" alt="Agreement">
-        <img src="./images/pay-rent.svg" alt="rent">
-        <img src="./images/refer&earn.svg" alt="refe&earn">
-        <img src="./images/home-service.svg" alt="Home Services">
-        <img src="./images/packer&mover.svg" alt="">
-        <img src="./images/NRI.svg" alt="">
-        <p>Rental Agreement</p>
-        <p>Pay Rent</p>
-        <p>Refer & Earn</p>
-        <p>Home Services</p>
-        <p>packer and Movers</p>
-        <p>Nobroker for NRIs</p>
+    <div class="services">
+        <div class="serviceItem">
+            <div class="serviceItemIcon"><img src="./images/rental-aggrement.svg" alt=""></div>
+            <div class="serviceItemText">Rental Agreement</div>
+        </div>
+        <div class="serviceItem">
+            <div class="serviceItemIcon"> <img src="./images/pay-rent.svg" alt=""></div>
+            <div class="serviceItemText">Pay Rent <span class="service-orange">Get Cashback</span></div>
+        </div>
+        <div class="serviceItem">
+            <div class="serviceItemIcon "><img src="./images/refer&earn.svg" alt=""></div>
+            <div class="serviceItemText">Refer & Earn</div>
+        </div>
+        <div class="serviceItem">
+            <div class="serviceItemIcon "><img src="./images/home-service.svg" alt=""></div>
+            <div class="serviceItemText">Home Services <span class="service-orange">sale is live!</span></div>
+        </div>
+        <div class="serviceItem">
+            <div class="serviceItemIcon"><img src="./images/packer&mover.svg" alt=""></div>
+            <div class="serviceItemText">Packers and Movers</div>
+        </div>
+        <div class="serviceItem">
+            <div class="serviceItemIcon "><img src="./images/NRI.svg" alt=""></div>
+            <div class="serviceItemText">Nobroker for NRIs</div>
+        </div>
     </div>
-    <div>
-        <div></div>
-        <p class="main_para">Why Use NoBroker</p>
-        <div></div>
+    <div class="hp-caption">
+        <div class="caption-line-circle1">
+            <div class="caption-line"></div>
+            <div class="caption-circle"></div>
+        </div>
+        <div class="caption-content">
+            Why Use NoBroker
+        </div>
+        <div class="caption-line-circle2">
+            <div class="caption-line"></div>
+            <div class="caption-circle"></div>
+        </div>
     </div>
     <div class="nobroker_imgs" style="clear: both;">
         <img src="./images/No broker.svg" alt="">
@@ -213,6 +401,18 @@
             <p>Easy listing process.Also <br>using WhatsApp</p>
             <p>Extensive information <br>makes it easy</p>
             <p>Assistance in creating <br>Rental agreement & Paper <br>work</p>
+        </div>
+    </div>
+    <div>
+        <div></div>
+        <p class="main_para">NoBroker Business Assist Plan For Builders</p>
+        <div></div>
+        <div >
+            <img src="./images/enquire_now.png" alt="">
+            <p>Get in touch with us to Sell or Rent Your Projects</p>
+            <div>Enquire Now</div>
+            <div></div>
+            <p>For Builder Enquiries: +91 9108050400</p>
         </div>
     </div>
 </body>
