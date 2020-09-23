@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Rent With Credit Card Online</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./payrent.css">
+</head>
+<body>
+    <div class="nav">
+        <img src="./images/nb_logo_new_trans.svg" alt="Nobroker" class="cursor" onclick="toMainpage()">
+        <div class="navigator">
+            <a href="#">Payment</a>
+            <a href="#">Benefits</a>
+            <a href="#">How It Works</a>    
+            <a href="#">Testimonials</a>
+            <a href="#">FAQs</a>
+        </div>
+        <div class="nav-i">
+            <button id="nav-login">Login/Sign Up</button>
+            <button>Menu</button>
+        </div>
+    </div>
+    <div class="main-contant">
+        <div class="credit-card">
+            <h1>
+                Pay Rent or Maintenance with Credit Card
+            </h1>
+            <div class="maintenance">
+                <div class="card">
+                    <div class="img">
+                        <img src="https://assets.nobroker.in/nb-new/public/RentoPay/card.svg" alt="Now pay Society Maintenance too">
+                    </div>
+                    <div class="info">
+                        <div class="nb__1fMwy">Now pay Society Maintenance too</div>
+                        <p class="nb__3TDWJ">All your property payments at one place - rent, maintenance, deposit, token</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img">
+                        <img src="https://assets.nobroker.in/nb-new/public/RentoPay/credit_card.svg" alt="Earn upto ₹30,000/- in Rewards">
+                    </div>
+                    <div class="info">
+                        <div class="nb__1fMwy">Earn upto ₹30,000/- in Rewards</div>
+                        <p class="nb__3TDWJ">Earn miles and reward points on your Visa and Mastercard cards plus enjoy upto 45 days interest free credit period.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img">
+                        <img src="https://assets.nobroker.in/nb-new/public/RentoPay/digital_rent_receipt.svg" alt="Digital Receipts">
+                    </div>
+                    <div class="info">
+                        <div class="nb__1fMwy">Digital Receipts</div>
+                        <p class="nb__3TDWJ">Payment receipts are generated instantly and sent directly to your email ID. Claim your HRA with ease.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img">
+                        <img src="https://assets.nobroker.in/nb-new/public/RentoPay/no_broker_trust.svg" alt="NoBroker Trust">
+                    </div>
+                    <div class="info">
+                        <div class="nb__1fMwy">NoBroker Trust</div>
+                        <p class="nb__3TDWJ">NoBroker Pay is a product by NoBroker and is 100% secure with PCI compliant payment gateway.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-form">
+            <div class="offers">
+
+            </div>
+            <div class="form">
+                <div class="form-header">
+                    <div class="icon-text">
+                        <div class="icon">
+                            <img src="https://assets.nobroker.in/nb-new/public/RentoPay/home.svg" alt="House Rent">
+                        </div>
+                        <p>House Rent</p>
+                    </div>
+                    <div class="icon-text">
+                        <div class="icon">
+                            <img src="https://assets.nobroker.in/nb-new/public/RentoPay/maintenance.svg" alt="Society Maintenance">
+                        </div>
+                        <p>Society Maintenance</p>
+                    </div>
+                    <div class="icon-text">
+                        <div class="icon">
+                            <img src="https://assets.nobroker.in/nb-new/public/RentoPay/office.svg" alt="Office/ Shop Rent">
+                        </div>
+                        <p>Office/Shop Rent</p>
+                    </div>
+                    <div class="icon-text">
+                        <div class="icon">
+                            <img src="https://assets.nobroker.in/nb-new/public/RentoPay/token.svg" alt="Property Token">
+                        </div>
+                        <p>Property Token</p>
+                    </div>
+                    <div class="icon-text">
+                        <div class="icon">
+                            <img src="https://assets.nobroker.in/nb-new/public/RentoPay/deposit.svg" alt="Property Deposit">
+                        </div>
+                        <p>Property Deposit</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tenant_name" class="control-label">Your Name</label><br><br>
+                    <input placeholder="Enter your name" autocomplete="off" id="tenant_name" class="form-control" value="">
+                </div>
+                <div class="mobile-form">
+                    <label for="Mobile Number">Mobile Number</label><br><br>
+                    <div class="mobileno">
+                        <div class="select-country">
+                            <select id="country-code">
+                                <option value="india">+91</option>
+                                <option value="USA">+1</option>
+                                <option value="UK">+44</option>
+                                <option value="UAE">+971</option>
+                                <option value="singapore">+65</option>
+                                <option value="australia">+61</option>
+                                <option value="bangladesh">+880</option>
+                            </select>
+                        </div>
+                        <div class="mobileno-input">
+                            <input type="text" placeholder="Enter mobile number" id="mobileNo"/>
+                        </div>
+                    </div>
+                    <div class="whatsapp-wrap" id="whatsapp">
+                        <div class="whatsapp-text">
+                            <div>Get updates <span>
+                                <img style="height: 16px;width: auto;margin: 0 1px 0 2px; top:-1px" src="//assets.nobroker.in/static/img/whatsapp_new.png">
+                            </span> on Whatsapp</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tenant_name" class="control-label">Your Email</label><br><br>
+                    <input placeholder="Enter email address" autocomplete="off" id="tenant_name" class="form-control" value="">
+                </div>
+                <div class="transfer">
+                    <div class="nb__1qUSR"></div>
+                    <span class="nb__rgtFt">
+                        <div class="nb__3jJt4">24/7 Instant Transfers</div>
+                        <div class="nb__34gS-">Your payment will be transferred instantly to your landlord’s account*</div>
+                    </span>
+        
+                </div>
+                <div class="form-btn-getstarted">
+                    <button type="submit" id="get_started">Get Started</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="earn-money">
+        <div class="earn-money-block">
+            <div class="earn">
+                <div class="earn-heading"> Earn money with NoBroker Pay</div>
+                <div class="earn-para">Start paying rent using your credit card and earn miles, cashback and reward points.</div>
+            </div>
+            <div class="tip">
+                <div class="tip-img"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPaSURBVFhH7VhJaBRREJ0obigeVHBFcMENl4Nb0Ez3xBgJYjK/JxlREDwYclQEQQhovLkjCHoKKt6MKEnmd7uABPWgiCLiRUFBiEEFiRuCCxpf/dRMenoqk5nMYER98CBTXfWquvrX7/4J/cc/jbJab6ml3POW41ayKSsWxVtG8p9ZUVl5bSx0T0K3kU2DAwRabcftgdhjNvnQUxKOactW+hj4CL5vja+jv8D/ha3ctnBU77A3tU/igBTgv418DWPtC9icPyylN4OdtqP3sMkgojwb9jupJFkIv0/gfjveMY7DQ2vj7TPppqB7Ldeu54ampmHo1EEI/5SKyUZ09kmZcuexUvERj7cMRycuSslTVO4P0c7Ezb2L1OjVLFlcoGuHpaQBnhNsacT6fGk73gyWLQ7smF4vJfMT3Xlohka4lkGlr7N0EYB1h0f3QEzkZzQRsZVXJl4TGFbeBs5QGEhIShDgJfLNp0B08YZJUCgwfafFBEza98LVbbPIN58CEfe9tO7qBJOkEEDomZQgReUeYtf8OghGom4th+aCnhIE1WMr2cwGA+pQUDhJTOSrVVXeeHbFpHszLCex1088ymNSbC/1bg41mzcGrbFceXPYlA4r5m3sC0wsJhu9ptIFM1hvgrMg+xLRx9kNby1Xs/0Wm9JhV1+di+69h0NXhbo80di2d4zuE0snbSs04Sa4H9CN0lqT4pkH2BW+7gGyodCjbMoEFbS84f4I/mmAoG4WC7Ib6+95Gh33AocZ0H4XiEkjGtLArgb+93XOoO1AEpeIbt3msJAV9aolHz8tx1vJ7oMHku6UxCUmC6SngPX1VPJJEt3rpME0SQoBrUck+yAlCTJZIE2ndD3AfSZBMYC7bRISZJAKpMmnrxbpepK4/npQ660/0PBguh5Lyfw0BSr3lHTNT9xwjKWLh3InsQzin4PJAuxCkdm2FWIzSxYfmOitWF95f00niUd7t6rKG8VyhaO07sKYiNJR/0sdSY5IyXNg17q6xHSWwTaUCFtRdwn/HBwg2kziKKqDTebTH130fIkHpnK/+j/1EV+VtK+paZ3G5vyBwThBQlhXCTYZ8Du6K1XAAITOLg416D2umvPLR+lYmjN6u+WV0qNmUwqRqFcRLESm9qQNGZO8sKDu5QIU0JJZkI9KfyuvuTKf3X8/zKOmA1V/rHVXsOt/iKA3TFlMz+6PdlxPYdehwUBnEPpKZtehAQ2AVFiS2D/PsusQofefSQ+l4ohFO5wXgrBzZSr2tDPYUt6kilPuTZxHtrDLnwFsyHHzdlD6Hpv+PKyrbpscPHT95QiFfgHxE+RM8gGdsgAAAABJRU5ErkJggg==" alt="tip"></div>
+                <div class="tip-info">You can earn up to ₹30,000* by just paying rent for a year by using your credit card.</div>
+            </div>
+        </div>
+        <div>
+            *This is calculated assuming an annual rent of 4.5 Lakhs on a Club Vistara SBI Card PRIME (Premium)
+        </div>
+    </div>
+    <div class="payment-block" id="payment-block-id">
+        <div class="payment">
+            <div class="payment-icon">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MCA5MCI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSwgLmNscy00LCAuY2xzLTggewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogI2U5ZWFlYjsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiAjZmQzNzUzOwogICAgICB9CgogICAgICAuY2xzLTMsIC5jbHMtNCwgLmNscy01LCAuY2xzLTYsIC5jbHMtNywgLmNscy04IHsKICAgICAgICBzdHJva2U6ICMzMjQwYTA7CiAgICAgICAgc3Ryb2tlLW1pdGVybGltaXQ6IDEwOwogICAgICAgIHN0cm9rZS13aWR0aDogMS41cHg7CiAgICAgIH0KCiAgICAgIC5jbHMtNCwgLmNscy01LCAuY2xzLTYgewogICAgICAgIHN0cm9rZS1saW5lam9pbjogcm91bmQ7CiAgICAgIH0KCiAgICAgIC5jbHMtNSwgLmNscy02LCAuY2xzLTcgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgIH0KCiAgICAgIC5jbHMtNiB7CiAgICAgICAgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iR3JvdXBfMTI5IiBkYXRhLW5hbWU9Ikdyb3VwIDEyOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIxOCAtMTI1MCkiPgogICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV8yNCIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMjQiIGNsYXNzPSJjbHMtMSIgd2lkdGg9IjkwIiBoZWlnaHQ9IjkwIiByeD0iOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjE4IDEyNTApIi8+CiAgICA8ZyBpZD0iR3JvdXBfNjgiIGRhdGEtbmFtZT0iR3JvdXAgNjgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0NC4xOTggMTI3Ny4xOTgpIj4KICAgICAgPGNpcmNsZSBpZD0iRWxsaXBzZV8xOCIgZGF0YS1uYW1lPSJFbGxpcHNlIDE4IiBjbGFzcz0iY2xzLTIiIGN4PSIxNS42MjYiIGN5PSIxNS42MjYiIHI9IjE1LjYyNiIgdHJhbnNmb3JtPSJtYXRyaXgoMC4zNjMsIC0wLjkzMiwgMC45MzIsIDAuMzYzLCAtNi4xOTgsIDIyLjkxNikiLz4KICAgICAgPGcgaWQ9Ikdyb3VwXzY1IiBkYXRhLW5hbWU9Ikdyb3VwIDY1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyLjEzNCAxLjM5KSI+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk4NyIgZGF0YS1uYW1lPSJQYXRoIDI5ODciIGNsYXNzPSJjbHMtMyIgZD0iTTkuNDY0LDM3LjI3NWwtMi4yMzIsNi43TDUsMzcuMjc1VjEwLjQ4OEExLjQ5MywxLjQ5MywwLDAsMSw2LjQ4OCw5SDcuOTc2YTEuNDkzLDEuNDkzLDAsMCwxLDEuNDg4LDEuNDg4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUgLTUuMjgpIi8+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk4OCIgZGF0YS1uYW1lPSJQYXRoIDI5ODgiIGNsYXNzPSJjbHMtNCIgZD0iTTguOTc2LDcuNzJINlY1LjQ4OEExLjQ5MywxLjQ5MywwLDAsMSw3LjQ4OCw0aDBBMS40OTMsMS40OTMsMCwwLDEsOC45NzYsNS40ODhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNS4yNTYgLTQpIi8+CiAgICAgICAgPGxpbmUgaWQ9IkxpbmVfNTQiIGRhdGEtbmFtZT0iTGluZSA1NCIgY2xhc3M9ImNscy00IiB4Mj0iNC40NjQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMzEuMjUxKSIvPgogICAgICAgIDxsaW5lIGlkPSJMaW5lXzU1IiBkYXRhLW5hbWU9IkxpbmUgNTUiIGNsYXNzPSJjbHMtNSIgeDI9IjcuNDQxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDcuNDQxKSIvPgogICAgICAgIDxsaW5lIGlkPSJMaW5lXzU2IiBkYXRhLW5hbWU9IkxpbmUgNTYiIGNsYXNzPSJjbHMtNSIgeTI9IjExLjE2MSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNy40NDEgNC40NjQpIi8+CiAgICAgICAgPGxpbmUgaWQ9IkxpbmVfNTciIGRhdGEtbmFtZT0iTGluZSA1NyIgY2xhc3M9ImNscy02IiB5Mj0iMS40ODgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIuMjMyIDM3Ljk0OCkiLz4KICAgICAgPC9nPgogICAgICA8ZyBpZD0iR3JvdXBfNjciIGRhdGEtbmFtZT0iR3JvdXAgNjciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDguODMxIDcuMzQzKSI+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk4OSIgZGF0YS1uYW1lPSJQYXRoIDI5ODkiIGNsYXNzPSJjbHMtMiIgZD0iTTU0LjcyLDEySDUxdjQuNDY0aDcuNDQxVjE1LjcyQTMuNjg0LDMuNjg0LDAsMCwwLDU0LjcyLDEyWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIzLjQ2OSAtMTIpIi8+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk5MCIgZGF0YS1uYW1lPSJQYXRoIDI5OTAiIGNsYXNzPSJjbHMtNyIgZD0iTTUzLjIzMiwxNi40NjRoNS4yMDlWMTUuNzJBMy42ODQsMy42ODQsMCwwLDAsNTQuNzIsMTJINTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMy40NjkgLTEyKSIvPgogICAgICAgIDxwYXRoIGlkPSJQYXRoXzI5OTEiIGRhdGEtbmFtZT0iUGF0aCAyOTkxIiBjbGFzcz0iY2xzLTgiIGQ9Ik0yMCwxNS43MkEzLjY4NCwzLjY4NCwwLDAsMSwyMy43MiwxMkg0Ni43ODdhMy42ODQsMy42ODQsMCwwLDAtMy43MiwzLjcyVjQyLjUwN2EzLjY4NCwzLjY4NCwwLDAsMS0zLjcyLDMuNzJIMjBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTUuNTM2IC0xMikiLz4KICAgICAgICA8ZyBpZD0iR3JvdXBfNjYiIGRhdGEtbmFtZT0iR3JvdXAgNjYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDguOTI5IDcuNDQxKSI+CiAgICAgICAgICA8bGluZSBpZD0iTGluZV81OCIgZGF0YS1uYW1lPSJMaW5lIDU4IiBjbGFzcz0iY2xzLTciIHgyPSIxMy4zOTMiLz4KICAgICAgICAgIDxsaW5lIGlkPSJMaW5lXzU5IiBkYXRhLW5hbWU9IkxpbmUgNTkiIGNsYXNzPSJjbHMtNyIgeDI9IjEzLjM5MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAyLjk3NikiLz4KICAgICAgICAgIDxsaW5lIGlkPSJMaW5lXzYwIiBkYXRhLW5hbWU9IkxpbmUgNjAiIGNsYXNzPSJjbHMtNyIgeDI9IjEzLjM5MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCA1Ljk1MykiLz4KICAgICAgICAgIDxsaW5lIGlkPSJMaW5lXzYxIiBkYXRhLW5hbWU9IkxpbmUgNjEiIGNsYXNzPSJjbHMtNyIgeDI9IjguMTg1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDguOTI5KSIvPgogICAgICAgIDwvZz4KICAgICAgICA8cGF0aCBpZD0iUGF0aF8yOTkyIiBkYXRhLW5hbWU9IlBhdGggMjk5MiIgY2xhc3M9ImNscy0zIiBkPSJNMTQsNTNhMy42ODQsMy42ODQsMCwwLDAsMy43MiwzLjcySDM3LjgxQTMuNjg0LDMuNjg0LDAsMCwxLDM0LjA5LDUzWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE0IC0yMi40OTMpIi8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="Fill Transaction Detail">
+            </div>
+            <div class="payment-num">1</div>
+            <div class="payment-type">Fill Transaction Detail</div>
+            <div class="payment-info">Provide your beneficiary bank details, and we will setup your account.</div>
+        </div>
+        <div class="payment">
+            <div class="payment-icon">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MCA5MCI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSwgLmNscy00LCAuY2xzLTggewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogI2U5ZWFlYjsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiAjZmQzNzUzOwogICAgICB9CgogICAgICAuY2xzLTMsIC5jbHMtNCwgLmNscy01LCAuY2xzLTYsIC5jbHMtNywgLmNscy04IHsKICAgICAgICBzdHJva2U6ICMzMjQwYTA7CiAgICAgICAgc3Ryb2tlLW1pdGVybGltaXQ6IDEwOwogICAgICAgIHN0cm9rZS13aWR0aDogMS41cHg7CiAgICAgIH0KCiAgICAgIC5jbHMtNCwgLmNscy01LCAuY2xzLTYgewogICAgICAgIHN0cm9rZS1saW5lam9pbjogcm91bmQ7CiAgICAgIH0KCiAgICAgIC5jbHMtNSwgLmNscy02LCAuY2xzLTcgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgIH0KCiAgICAgIC5jbHMtNiB7CiAgICAgICAgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iR3JvdXBfMTI5IiBkYXRhLW5hbWU9Ikdyb3VwIDEyOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIxOCAtMTI1MCkiPgogICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV8yNCIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMjQiIGNsYXNzPSJjbHMtMSIgd2lkdGg9IjkwIiBoZWlnaHQ9IjkwIiByeD0iOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjE4IDEyNTApIi8+CiAgICA8ZyBpZD0iR3JvdXBfNjgiIGRhdGEtbmFtZT0iR3JvdXAgNjgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0NC4xOTggMTI3Ny4xOTgpIj4KICAgICAgPGNpcmNsZSBpZD0iRWxsaXBzZV8xOCIgZGF0YS1uYW1lPSJFbGxpcHNlIDE4IiBjbGFzcz0iY2xzLTIiIGN4PSIxNS42MjYiIGN5PSIxNS42MjYiIHI9IjE1LjYyNiIgdHJhbnNmb3JtPSJtYXRyaXgoMC4zNjMsIC0wLjkzMiwgMC45MzIsIDAuMzYzLCAtNi4xOTgsIDIyLjkxNikiLz4KICAgICAgPGcgaWQ9Ikdyb3VwXzY1IiBkYXRhLW5hbWU9Ikdyb3VwIDY1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyLjEzNCAxLjM5KSI+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk4NyIgZGF0YS1uYW1lPSJQYXRoIDI5ODciIGNsYXNzPSJjbHMtMyIgZD0iTTkuNDY0LDM3LjI3NWwtMi4yMzIsNi43TDUsMzcuMjc1VjEwLjQ4OEExLjQ5MywxLjQ5MywwLDAsMSw2LjQ4OCw5SDcuOTc2YTEuNDkzLDEuNDkzLDAsMCwxLDEuNDg4LDEuNDg4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUgLTUuMjgpIi8+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk4OCIgZGF0YS1uYW1lPSJQYXRoIDI5ODgiIGNsYXNzPSJjbHMtNCIgZD0iTTguOTc2LDcuNzJINlY1LjQ4OEExLjQ5MywxLjQ5MywwLDAsMSw3LjQ4OCw0aDBBMS40OTMsMS40OTMsMCwwLDEsOC45NzYsNS40ODhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNS4yNTYgLTQpIi8+CiAgICAgICAgPGxpbmUgaWQ9IkxpbmVfNTQiIGRhdGEtbmFtZT0iTGluZSA1NCIgY2xhc3M9ImNscy00IiB4Mj0iNC40NjQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMzEuMjUxKSIvPgogICAgICAgIDxsaW5lIGlkPSJMaW5lXzU1IiBkYXRhLW5hbWU9IkxpbmUgNTUiIGNsYXNzPSJjbHMtNSIgeDI9IjcuNDQxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDcuNDQxKSIvPgogICAgICAgIDxsaW5lIGlkPSJMaW5lXzU2IiBkYXRhLW5hbWU9IkxpbmUgNTYiIGNsYXNzPSJjbHMtNSIgeTI9IjExLjE2MSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNy40NDEgNC40NjQpIi8+CiAgICAgICAgPGxpbmUgaWQ9IkxpbmVfNTciIGRhdGEtbmFtZT0iTGluZSA1NyIgY2xhc3M9ImNscy02IiB5Mj0iMS40ODgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIuMjMyIDM3Ljk0OCkiLz4KICAgICAgPC9nPgogICAgICA8ZyBpZD0iR3JvdXBfNjciIGRhdGEtbmFtZT0iR3JvdXAgNjciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDguODMxIDcuMzQzKSI+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk4OSIgZGF0YS1uYW1lPSJQYXRoIDI5ODkiIGNsYXNzPSJjbHMtMiIgZD0iTTU0LjcyLDEySDUxdjQuNDY0aDcuNDQxVjE1LjcyQTMuNjg0LDMuNjg0LDAsMCwwLDU0LjcyLDEyWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIzLjQ2OSAtMTIpIi8+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk5MCIgZGF0YS1uYW1lPSJQYXRoIDI5OTAiIGNsYXNzPSJjbHMtNyIgZD0iTTUzLjIzMiwxNi40NjRoNS4yMDlWMTUuNzJBMy42ODQsMy42ODQsMCwwLDAsNTQuNzIsMTJINTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMy40NjkgLTEyKSIvPgogICAgICAgIDxwYXRoIGlkPSJQYXRoXzI5OTEiIGRhdGEtbmFtZT0iUGF0aCAyOTkxIiBjbGFzcz0iY2xzLTgiIGQ9Ik0yMCwxNS43MkEzLjY4NCwzLjY4NCwwLDAsMSwyMy43MiwxMkg0Ni43ODdhMy42ODQsMy42ODQsMCwwLDAtMy43MiwzLjcyVjQyLjUwN2EzLjY4NCwzLjY4NCwwLDAsMS0zLjcyLDMuNzJIMjBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTUuNTM2IC0xMikiLz4KICAgICAgICA8ZyBpZD0iR3JvdXBfNjYiIGRhdGEtbmFtZT0iR3JvdXAgNjYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDguOTI5IDcuNDQxKSI+CiAgICAgICAgICA8bGluZSBpZD0iTGluZV81OCIgZGF0YS1uYW1lPSJMaW5lIDU4IiBjbGFzcz0iY2xzLTciIHgyPSIxMy4zOTMiLz4KICAgICAgICAgIDxsaW5lIGlkPSJMaW5lXzU5IiBkYXRhLW5hbWU9IkxpbmUgNTkiIGNsYXNzPSJjbHMtNyIgeDI9IjEzLjM5MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAyLjk3NikiLz4KICAgICAgICAgIDxsaW5lIGlkPSJMaW5lXzYwIiBkYXRhLW5hbWU9IkxpbmUgNjAiIGNsYXNzPSJjbHMtNyIgeDI9IjEzLjM5MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCA1Ljk1MykiLz4KICAgICAgICAgIDxsaW5lIGlkPSJMaW5lXzYxIiBkYXRhLW5hbWU9IkxpbmUgNjEiIGNsYXNzPSJjbHMtNyIgeDI9IjguMTg1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDguOTI5KSIvPgogICAgICAgIDwvZz4KICAgICAgICA8cGF0aCBpZD0iUGF0aF8yOTkyIiBkYXRhLW5hbWU9IlBhdGggMjk5MiIgY2xhc3M9ImNscy0zIiBkPSJNMTQsNTNhMy42ODQsMy42ODQsMCwwLDAsMy43MiwzLjcySDM3LjgxQTMuNjg0LDMuNjg0LDAsMCwxLDM0LjA5LDUzWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE0IC0yMi40OTMpIi8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="Fill Transaction Detail">
+            </div>
+            <div class="payment-num">2</div>
+            <div class="payment-type">Make Payment</div>
+            <div class="payment-info">Make payment through your credit card or debit card.</div>
+        </div>
+        <div class="payment">
+            <div class="payment-icon">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MCA5MCI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSwgLmNscy00LCAuY2xzLTggewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogI2U5ZWFlYjsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiAjZmQzNzUzOwogICAgICB9CgogICAgICAuY2xzLTMsIC5jbHMtNCwgLmNscy01LCAuY2xzLTYsIC5jbHMtNywgLmNscy04IHsKICAgICAgICBzdHJva2U6ICMzMjQwYTA7CiAgICAgICAgc3Ryb2tlLW1pdGVybGltaXQ6IDEwOwogICAgICAgIHN0cm9rZS13aWR0aDogMS41cHg7CiAgICAgIH0KCiAgICAgIC5jbHMtNCwgLmNscy01LCAuY2xzLTYgewogICAgICAgIHN0cm9rZS1saW5lam9pbjogcm91bmQ7CiAgICAgIH0KCiAgICAgIC5jbHMtNSwgLmNscy02LCAuY2xzLTcgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgIH0KCiAgICAgIC5jbHMtNiB7CiAgICAgICAgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iR3JvdXBfMTI5IiBkYXRhLW5hbWU9Ikdyb3VwIDEyOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIxOCAtMTI1MCkiPgogICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV8yNCIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMjQiIGNsYXNzPSJjbHMtMSIgd2lkdGg9IjkwIiBoZWlnaHQ9IjkwIiByeD0iOCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjE4IDEyNTApIi8+CiAgICA8ZyBpZD0iR3JvdXBfNjgiIGRhdGEtbmFtZT0iR3JvdXAgNjgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0NC4xOTggMTI3Ny4xOTgpIj4KICAgICAgPGNpcmNsZSBpZD0iRWxsaXBzZV8xOCIgZGF0YS1uYW1lPSJFbGxpcHNlIDE4IiBjbGFzcz0iY2xzLTIiIGN4PSIxNS42MjYiIGN5PSIxNS42MjYiIHI9IjE1LjYyNiIgdHJhbnNmb3JtPSJtYXRyaXgoMC4zNjMsIC0wLjkzMiwgMC45MzIsIDAuMzYzLCAtNi4xOTgsIDIyLjkxNikiLz4KICAgICAgPGcgaWQ9Ikdyb3VwXzY1IiBkYXRhLW5hbWU9Ikdyb3VwIDY1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyLjEzNCAxLjM5KSI+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk4NyIgZGF0YS1uYW1lPSJQYXRoIDI5ODciIGNsYXNzPSJjbHMtMyIgZD0iTTkuNDY0LDM3LjI3NWwtMi4yMzIsNi43TDUsMzcuMjc1VjEwLjQ4OEExLjQ5MywxLjQ5MywwLDAsMSw2LjQ4OCw5SDcuOTc2YTEuNDkzLDEuNDkzLDAsMCwxLDEuNDg4LDEuNDg4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUgLTUuMjgpIi8+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk4OCIgZGF0YS1uYW1lPSJQYXRoIDI5ODgiIGNsYXNzPSJjbHMtNCIgZD0iTTguOTc2LDcuNzJINlY1LjQ4OEExLjQ5MywxLjQ5MywwLDAsMSw3LjQ4OCw0aDBBMS40OTMsMS40OTMsMCwwLDEsOC45NzYsNS40ODhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNS4yNTYgLTQpIi8+CiAgICAgICAgPGxpbmUgaWQ9IkxpbmVfNTQiIGRhdGEtbmFtZT0iTGluZSA1NCIgY2xhc3M9ImNscy00IiB4Mj0iNC40NjQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMzEuMjUxKSIvPgogICAgICAgIDxsaW5lIGlkPSJMaW5lXzU1IiBkYXRhLW5hbWU9IkxpbmUgNTUiIGNsYXNzPSJjbHMtNSIgeDI9IjcuNDQxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDcuNDQxKSIvPgogICAgICAgIDxsaW5lIGlkPSJMaW5lXzU2IiBkYXRhLW5hbWU9IkxpbmUgNTYiIGNsYXNzPSJjbHMtNSIgeTI9IjExLjE2MSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNy40NDEgNC40NjQpIi8+CiAgICAgICAgPGxpbmUgaWQ9IkxpbmVfNTciIGRhdGEtbmFtZT0iTGluZSA1NyIgY2xhc3M9ImNscy02IiB5Mj0iMS40ODgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIuMjMyIDM3Ljk0OCkiLz4KICAgICAgPC9nPgogICAgICA8ZyBpZD0iR3JvdXBfNjciIGRhdGEtbmFtZT0iR3JvdXAgNjciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDguODMxIDcuMzQzKSI+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk4OSIgZGF0YS1uYW1lPSJQYXRoIDI5ODkiIGNsYXNzPSJjbHMtMiIgZD0iTTU0LjcyLDEySDUxdjQuNDY0aDcuNDQxVjE1LjcyQTMuNjg0LDMuNjg0LDAsMCwwLDU0LjcyLDEyWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIzLjQ2OSAtMTIpIi8+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjk5MCIgZGF0YS1uYW1lPSJQYXRoIDI5OTAiIGNsYXNzPSJjbHMtNyIgZD0iTTUzLjIzMiwxNi40NjRoNS4yMDlWMTUuNzJBMy42ODQsMy42ODQsMCwwLDAsNTQuNzIsMTJINTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMy40NjkgLTEyKSIvPgogICAgICAgIDxwYXRoIGlkPSJQYXRoXzI5OTEiIGRhdGEtbmFtZT0iUGF0aCAyOTkxIiBjbGFzcz0iY2xzLTgiIGQ9Ik0yMCwxNS43MkEzLjY4NCwzLjY4NCwwLDAsMSwyMy43MiwxMkg0Ni43ODdhMy42ODQsMy42ODQsMCwwLDAtMy43MiwzLjcyVjQyLjUwN2EzLjY4NCwzLjY4NCwwLDAsMS0zLjcyLDMuNzJIMjBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTUuNTM2IC0xMikiLz4KICAgICAgICA8ZyBpZD0iR3JvdXBfNjYiIGRhdGEtbmFtZT0iR3JvdXAgNjYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDguOTI5IDcuNDQxKSI+CiAgICAgICAgICA8bGluZSBpZD0iTGluZV81OCIgZGF0YS1uYW1lPSJMaW5lIDU4IiBjbGFzcz0iY2xzLTciIHgyPSIxMy4zOTMiLz4KICAgICAgICAgIDxsaW5lIGlkPSJMaW5lXzU5IiBkYXRhLW5hbWU9IkxpbmUgNTkiIGNsYXNzPSJjbHMtNyIgeDI9IjEzLjM5MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAyLjk3NikiLz4KICAgICAgICAgIDxsaW5lIGlkPSJMaW5lXzYwIiBkYXRhLW5hbWU9IkxpbmUgNjAiIGNsYXNzPSJjbHMtNyIgeDI9IjEzLjM5MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCA1Ljk1MykiLz4KICAgICAgICAgIDxsaW5lIGlkPSJMaW5lXzYxIiBkYXRhLW5hbWU9IkxpbmUgNjEiIGNsYXNzPSJjbHMtNyIgeDI9IjguMTg1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDguOTI5KSIvPgogICAgICAgIDwvZz4KICAgICAgICA8cGF0aCBpZD0iUGF0aF8yOTkyIiBkYXRhLW5hbWU9IlBhdGggMjk5MiIgY2xhc3M9ImNscy0zIiBkPSJNMTQsNTNhMy42ODQsMy42ODQsMCwwLDAsMy43MiwzLjcySDM3LjgxQTMuNjg0LDMuNjg0LDAsMCwxLDM0LjA5LDUzWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE0IC0yMi40OTMpIi8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="Fill Transaction Detail">
+            </div>
+            <div class="payment-num">3</div>
+            <div class="payment-type">Payment Credited!</div>
+            <div class="payment-info">Your payment is credited to your beneficiary’s bank account within 2 working days.</div>
+        </div>
+    </div>
+    <div class="customer-feedback">
+        <h3>
+            Hear it From Our Customers
+        </h3>
+        <p>Testimonials from our NoBroker Pay customers</p>
+        
+        <div class="slideshow-container">
+        
+            <div class="mySlides">
+              <div class="feedback-card">
+                <div style = "width: 15px;float: left;margin-right: 10px;" class="nb__3Ep4v"><i class='fas'>&#xf10d;</i></div>
+                <div class="nb__HF_nV"><i  class="fa">&#xf068;</i></div>
+                <div class="feedback-contant">"NoBroker Pay has helped me immensely to manage my finances better. Now I am able to earn
+                  vouchers worth approximately Rs. 30K using my Amex Platinum Travel card. You need to choose your credit card
+                  carefully to get the maximum benefit."
+                </div>
+                <div class="feedback-footer">
+                  <div class="feedback-img">
+                    <img src="https://assets.nobroker.in/nb-new/public/RentoPay/testimonial_arjun.png" alt="user">
+                  </div>
+                  <div class="feedback-name">Arjun Santosh</div>
+                  <div class="stars"><i class="fa">&#xf005;</i></div>
+                </div>
+              </div>
+            </div>
+        
+        <div class="mySlides">
+            <div class="feedback-card">
+              <div style = "width: 15px;float: left;margin-right: 10px;" class="nb__3Ep4v"><i class='fas'>&#xf10d;</i></div>
+              <div class="nb__HF_nV"><i  class="fa">&#xf068;</i></div>
+              <div class="feedback-contant">"I think I am one of the first customers of NoBroker Pay. I feel financially secure paying
+                my rent through credit card. I invest in mutual funds every month and now I have extra cash of Rs. 24000 (my
+                house rent) which I can invest because of the 50 day interest free period provided by my credit card."
+              </div>
+              <div class="feedback-footer">
+                <div class="feedback-img">
+                  <img src="https://assets.nobroker.in/nb-new/public/RentoPay/testimonial_kartik.jpg" alt="user">
+                </div>
+                <div class="feedback-name">Karthik Kulkarni</div>
+                <div class="stars"><i class="fa">&#xf005;</i></div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="mySlides">
+            <div class="feedback-card">
+              <div style = "width: 15px;float: left;margin-right: 10px;" class="nb__3Ep4v"><i class='fas'>&#xf10d;</i></div>
+              <div class="nb__HF_nV"><i  class="fa">&#xf068;</i></div>
+              <div class="feedback-contant">"I am really excited about using NoBroker Pay. I had paid my house rent through my credit
+                card. The entire process is so seamless. My landlord too got an instant notification. Though NoBroker people
+                claim they will credit the amount within 48 hours, mine got credited in under 7 hours."
+              </div>
+              <div class="feedback-footer">
+                <div class="feedback-img">
+                    <img src="https://assets.nobroker.in/nb-new/public/RentoPay/testimonial_jyothi.jpg" alt="user">
+                </div>
+                <div class="feedback-name">Jyothi Dave</div>
+                <div class="stars"><i class="fa">&#xf005;</i></div>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+  
+    </div>
+
+
+
+    
+<script>
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
+    
+</body>
+</html>

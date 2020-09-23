@@ -12,15 +12,22 @@
             <img src="./images/nb_logo_new_trans.svg" alt="Nobroker" class="cursor" onclick="toMainpage()">
             <div class="nav-space"></div>
             <div class="nav-i">
-                <button id="nav-pay-rent"><i style="font-size:18px" class='fas fa-money-check'></i> Pay Rent</button>
+                <button id="nav-pay-rent"><i style="font-size:15px" class='fas fa-money-check'></i> Pay Rent</button>
                 <button id="nav-owner">For Property Owners</button>
                 <button id="nav-login">Login/Sign Up</button>
-                <button id="nav-menu"><i style="font-size:18px" class="fa fa-bars">Menu</i></button>
+                <div class="dropdown">
+                    <button id="nav-menu" onclick="openMenu()"><i style="font-size:15px" class="fa fa-bars">Menu</i></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>  
             </div>
         </div>
         
         <div class="main_content text-center">
-            <div>
+            <div class="first-main">
                 <p class ="main_para">World's Largest NoBrokerage Property Site</p>
                 <div class="report">
                     <div>
@@ -33,9 +40,12 @@
             </div>
             
             <div class="buy">
-                <div>Buy</div>
+                <button>Buy</button>
+                <button id="button-2">Rent</button>
+                <button>Commercial</button>
+                <!-- <div>Buy</div>
                 <div style="background:white;border-bottom: solid red 5px">Rent</div>
-                <div>Commercial</div>
+                <div id="buy-3">Commercial</div> -->
             </div>
             <div id="search">
                 <div class="search-form">
@@ -48,7 +58,7 @@
                     </div>
                     <div class="search-button">
                         <button>
-                            <i class="fa fa-search" style="font-size:24px; color: white;"></i>
+                            <span><i class="fa fa-search" style="font-size:24px; color: white;"></i></span>
                             Search
                         </button>
                     </div>
@@ -73,27 +83,27 @@
             </div>
         </div>
         <div class="services">
-            <div class="serviceItem">
+            <div class="serviceItem" id="service-1">
                 <div class="serviceItemIcon"><img src="./images/rental-aggrement.svg" alt=""></div>
                 <div class="serviceItemText">Rental Agreement</div>
             </div>
-            <div class="serviceItem">
+            <div class="serviceItem" id="service-2">
                 <div class="serviceItemIcon"> <img src="./images/pay-rent.svg" alt=""></div>
                 <div class="serviceItemText">Pay Rent <span class="service-orange">Get Cashback</span></div>
             </div>
-            <div class="serviceItem">
+            <div class="serviceItem" id="service-3">
                 <div class="serviceItemIcon "><img src="./images/refer&earn.svg" alt=""></div>
                 <div class="serviceItemText">Refer & Earn</div>
             </div>
-            <div class="serviceItem">
+            <div class="serviceItem" id="service-4">
                 <div class="serviceItemIcon "><img src="./images/home-service.svg" alt=""></div>
                 <div class="serviceItemText">Home Services <span class="service-orange">sale is live!</span></div>
             </div>
-            <div class="serviceItem">
+            <div class="serviceItem" id="service-5">
                 <div class="serviceItemIcon"><img src="./images/packer&mover.svg" alt=""></div>
                 <div class="serviceItemText">Packers and Movers</div>
             </div>
-            <div class="serviceItem">
+            <div class="serviceItem" id="service-6">
                 <div class="serviceItemIcon "><img src="./images/NRI.svg" alt=""></div>
                 <div class="serviceItemText">Nobroker for NRIs</div>
             </div>
@@ -116,21 +126,21 @@
                 <div class="info-content-icon">
                     <img src="./images/No broker.svg" alt="">
                 </div>
-                <div class="info-content-text">
+                <div class="info-content-text" id="info-1">
                     <h4>Avoid Brokers</h4>
                     <p>We directly connect you to verified owners to save brokerage</p>
                 </div>
             </div>
-            <div class="info-content-icon-text">
+            <div class="info-content-icon-text" id="info-2">
                 <div class="info-content-icon">
                     <img src="./images/list.svg" alt="">
                 </div>
-                <div class="info-content-text">
+                <div class="info-content-text" id="info-3">
                     <h4>Free listing</h4>
                     <p>Easy listing process.Also using WhatsApp</p>
                 </div>
             </div>
-            <div class="info-content-icon-text">
+            <div class="info-content-icon-text" id="info-4">
                 <div class="info-content-icon">
                     <img src="./images/home.svg" alt="">
                 </div>
@@ -196,13 +206,13 @@
                 </div>
                 <p>Brokerage Saved Monthly</p>
             </div>
-            <div class="round-1">
+            <div class="round-1" id="round-02">
                 <div class="round">
                     <p>30 Lakh+</p>
                 </div>
                 <p>Customers Connected Monthly</p>
             </div>
-            <div class="round-1">
+            <div class="round-1" id="round-03">
                 <div class="round">
                     <p> 2 Lakh+</p>
                 </div>
@@ -227,27 +237,218 @@
             </div>
             <a href="https://www.nobroker.in/testimonials/" target="_blank">More Testimonials</a>
         </div>
-        <div class="appstore-block">
-            <div class="appstore-container">
-                <div class="mobile-app-img">
-                    <img src="./images/mobile_photo.png" alt="">
+        <div class="appstore-container">
+            <div class="mobile-app-img" id="app-1">
+                <img src="./images/mobile_photo.png" alt="">
+            </div>
+            <div class="mobile-app-details" id="app-2">
+                <div class="mobile-title">
+                    Find A New Home On The Go
                 </div>
-                <div class="mobile-app-details">
-                    <div class="mobile-title">
-                        Find A New Home On The Go
+                <div class="download-title">
+                    Download our app
+                </div>
+                <div class="download-sub-title">
+                    Where convenience is at your fingertip
+                </div>
+                <div class="android-app-link">
+                    <img src="./images/playstore.png" alt="">
+                </div>
+                <div class="ios-app-link">
+                    <img src="./images/appstore.svg" alt="" style="width: 165px;height: 48px;">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="row">
+                <div class="about-us">
+                    <h3>About US</h3>
+                    <p>NoBroker is a new home rental platform that makes it easier to find your new home without paying any brokerage. Use our verified listing to ensure you find your dream home by contacting the owners directly. In case you cannot find a property you are looking for, please post a requirement and we'll send you email notification with properties matching your requirements.</p>
+                </div>
+                <div class="row-ccf-wrap">
+                    <div class="company">
+                        <h4>Company</h4>
+                        <ul> 
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Term & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Rental</a></li>
+                            <li><a href="#">Agreement</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">SiteMap</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">NoBrokerHOOD</a></li>
+                        </ul>
                     </div>
-                    <div class="download-title">
-                        Download our app
+                    <div class="ccf-contact-us">
+                        <h4>Contact US</h4>
+                        <ul> 
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Corporate</a></li>
+                            <li><a href="#">Enquiry</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">@NoBrokerCom</a></li>
+                            <li><a href="#">Crunchbase</a></li>
+                            <li><a href="#">Media</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Quora</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Youtube</a></li>
+                            <li><a href="#">Medium</a></li>
+                        </ul>
                     </div>
-                    <div class="download-sub-title">
-                        Where convenience is at your fingertip
+                    <div class="follow-us">
+                        <h4>Follow US</h4>
+                        <ul>
+                            <li>
+                                <span id="fb"><i style="font-size:15px;color: white;" class="fa">&#xf09a;</i></span>
+                                <a href="#">Share on Facebook</a>
+                            </li>
+                            <li>
+                                <span id="twitter"><i style="font-size:15px;color: white;" class="fa">&#xf099;</i></span>
+                                <a href="#">Share on Twitter</a>
+                            </li>
+                            <li>
+                                <span id="insta"><i style="font-size:15px;color: white;" class="fa">&#xf16d;</i></span>
+                                <a href="#">Share on Instagram</a>
+                            </li>
+                            <li>
+                                <img src="./images/playstore.png" alt="">
+                            </li>
+                        </ul>
                     </div>
-                    <div class="android-app-link">
-                        <img src="./images/playstore.png" alt="">
-                    </div>
-                    <div class="ios-app-link">
-                        <img src="./images/appstore.svg" alt="" style="width: 165px;height: 48px;">
-                    </div>
+                    
+                </div>
+            </div>
+            <div class="footer-head">
+                <div>Flats for Sale</div>
+                <div>Flats for Rent</div>
+                <div>Flats for PG</div>
+                <div>Flatmates</div>
+                <div>Miscellaneous</div>
+            </div>
+            <div class="footer-content">
+                <div class="banglore">
+                    <h4>Flats for Sale in Banglore </h4>
+                    <ul> 
+                        <li><a href="#">Flats for sale in Koramangala</a></li>
+                        <li><a href="#">Flats for sale in Marathahalli</a></li>
+                        <li><a href="#">Flats for sale in HSR Layout</a></li>
+                        <li><a href="#">Flats for sale in Whitefield</a></li>
+                        <li><a href="#">Flats for sale Indiara Nagar</a></li>
+                        <li><a href="#">Flats for sale in Bellandur</a></li>
+                        <li><a href="#">Flats for sale in Chandra Layout</a></li>
+                        <li><a href="#">Flats for sale in J.P.Nagar</a></li>
+                        <li><a href="#">Flats for sale in BTM Layout</a></li>
+                        <li><a href="#">Flats for sale in Jayanagar</a></li>
+                        <li><a href="#">Flats for Sale in Banglore Below 10 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Banglore Below 15 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Banglore Below 20 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Banglore Below 25 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Banglore Below 30 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Banglore Below 35 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Banglore Below 40 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Banglore Below 45 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Banglore Below 50 Lakhs</a></li>
+                    </ul>
+                </div>
+                <div class="mumbai">
+                    <h4>Flats for Sale in Mumbai </h4>
+                    <ul> 
+                        <li><a href="#">Flats for sale in Andheri West</a></li>
+                        <li><a href="#">Flats for sale in Andheri East</a></li>
+                        <li><a href="#">Flats for sale in Malad West</a></li>
+                        <li><a href="#">Flats for sale in Navi Mumbai</a></li>
+                        <li><a href="#">Flats for sale Powai</a></li>
+                        <li><a href="#">Flats for sale in Thane West</a></li>
+                        <li><a href="#">Flats for sale in Mira Road East</a></li>
+                        <li><a href="#">Flats for sale in Kharghar</a></li>
+                        <li><a href="#">Flats for sale in Kandivali East</a></li>
+                        <li><a href="#">Flats for sale in Bandra West</a></li>
+                        <li><a href="#">Flats for Sale in Mumbai Below 10 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Mumbai Below 15 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Mumbai Below 20 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Mumbai Below 25 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Mumbai Below 30 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Mumbai Below 35 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Mumbai Below 40 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Mumbai Below 45 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Mumbai Below 50 Lakhs</a></li>
+                    </ul>
+                </div>
+                <div class="chennai">
+                    <h4>Flats for Sale in Chennai </h4>
+                    <ul> 
+                        <li><a href="#">Flats for sale in Velachery</a></li>
+                        <li><a href="#">Flats for sale in Thiruvanmiyur</a></li>
+                        <li><a href="#">Flats for sale in Madipakkam</a></li>
+                        <li><a href="#">Flats for sale in Thoraipakkam</a></li>
+                        <li><a href="#">Flats for sale in Sholinganallur</a></li>
+                        <li><a href="#">Flats for sale in Medavakkam</a></li>
+                        <li><a href="#">Flats for sale in Mylapore</a></li>
+                        <li><a href="#">Flats for sale in Adyar</a></li>
+                        <li><a href="#">Flats for sale in T Nagar</a></li>
+                        <li><a href="#">Flats for sale in Perungudi</a></li>
+                        <li><a href="#">Flats for Sale in Chennai Below 10 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Chennai Below 15 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Chennai Below 20 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Chennai Below 25 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Chennai Below 30 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Chennai Below 35 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Chennai Below 40 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Chennai Below 45 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Chennai Below 50 Lakhs</a></li>
+                    </ul>
+                </div>
+                <div class="pune">
+                    <h4>Flats for Sale in Pune </h4>
+                    <ul> 
+                        <li><a href="#">Flats for sale in Wakad</a></li>
+                        <li><a href="#">Flats for sale in Kharadi</a></li>
+                        <li><a href="#">Flats for sale in Baner</a></li>
+                        <li><a href="#">Flats for sale in Hadapsar</a></li>
+                        <li><a href="#">Flats for sale in Aundh</a></li>
+                        <li><a href="#">Flats for sale in Kothrud</a></li>
+                        <li><a href="#">Flats for sale in Pimple Saudagar</a></li>
+                        <li><a href="#">Flats for sale in Viman Nagar</a></li>
+                        <li><a href="#">Flats for sale in Pimprir</a></li>
+                        <li><a href="#">Flats for sale in Hinjewadi</a></li>
+                        <li><a href="#">Flats for Sale in Pune Below 10 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Pune Below 15 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Pune Below 20 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Pune Below 25 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Pune Below 30 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Pune Below 35 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Pune Below 40 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Pune Below 45 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Pune Below 50 Lakhs</a></li>
+                    </ul>
+                </div>
+                <div class="gurgaon">
+                    <h4>Flats for Sale in Gurgaon </h4>
+                    <ul> 
+                        <li><a href="#">1 BHK Flats in Gurgaon for Sale</a></li>
+                        <li><a href="#">2 BHK Flats in Gurgaon for Sale</a></li>
+                        <li><a href="#">3 BHK Flats in Gurgaon for Sale</a></li>
+                        <li><a href="#">4 BHK Flats in Gurgaon for Sale</a></li>
+                        <li><a href="#">4+ BHK Flats in Gurgaon for Sale</a></li>
+                        <li><a href="#">Fully Furnished Flats For Sale in Gurgaon</a></li>
+                        <li><a href="#">Semi Furnished Flats For Sale in Gurgaon</a></li>
+                        <li><a href="#">Unfurnished Flats For Sale in Gurgaon</a></li>
+                        <li><a href="#">Independent / Builder Floor in Gurgaon</a></li>
+                        <li><a href="#">Independent Houses / Villas in Gurgaon</a></li>
+                        <li><a href="#">Flats for Sale in Gurgaon Below 10 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Gurgaon Below 15 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Gurgaon Below 20 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Gurgaon Below 25 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Gurgaon Below 30 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Gurgaon Below 35 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Gurgaon Below 40 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Gurgaon Below 45 Lakhs</a></li>
+                        <li><a href="#">Flats for Sale in Gurgaon Below 50 Lakhs</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -260,6 +461,25 @@
         login.addEventListener('click',toLoginPage)
         function toMainpage(){
             location.href = 'dashboard.html';
+        }
+        function openMenu(){
+            console.log("1");
+            var dropdown = document.getElementById("myDropdown");
+            dropdown.setAttribute('class','show');
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('#nav-menu')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+           
+            for (var i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
         }
     </script>
 </body>
